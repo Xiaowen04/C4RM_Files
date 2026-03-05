@@ -1,7 +1,7 @@
 
 import numpy as np
 
-def ES(losses, alpha=None, VaR=None):
+def ES(losses, confidenc=.95, VaR=None):
     """
     Calculate the Expected Shortfall (ES) of losses.
     
