@@ -1,22 +1,30 @@
-import numpy as np
+import yfinance as yf
+import pandas as pd
 
-def YahooData2returns(YahooData):
-    # Yahoo Data = raw downloaded data from Yahoo Finance using yfinance
-    # returns = % returns of 'Adj Close' as a data vector (not a data frame)
-    
-    '''
-    # Practice data for unit test
-    d = {   'Open': [100, 102, 101, 103],
-        'High': [105, 104, 103, 105],
-        'Low': [98, 100, 99, 101],
-        'Close': [101, 103, 102, 104],
-        'Adj Close': [101, 103, 102, 104],
-        'Volume': [1000, 1200, 900, 1100]}
 
-    index = pd.to_datetime(['2023-10-26', '2023-10-27', '2023-10-28', '2023-10-29'])
-    tempdata = pd.DataFrame(d, index=index)
-    '''
+columns = pd.MultiIndex.from_tuples([
+    ('Close', 'AAPL'),
+    ('High', 'AAPL'),
+    ('Low', 'AAPL'),
+    ('Open', 'AAPL'),
+    ('Volume', 'AAPL')
+], names=['Metric', 'Ticker'])
 
-    returns = np.array([ 0.01980198, -0.00970874,  0.01960784])
+sample_data_rows = [
+    [150.00, 152.50, 149.00, 151.00, 10000000],
+    [151.50, 153.00, 150.50, 150.50, 11000000],
+    [153.00, 154.00, 152.00, 152.00, 9500000]
+]
+
+# Create a DataFrame
+SampleData = pd.DataFrame(sample_data_rows, columns=columns)
+
+def YahooData2returns(YahooData=SampleData,symbol='AAPL'):
+    # Input:
+    # YahooData = data from Yahoo Finance
+    # Output:
+    # returns = array of returns
+    # Steps:
+    # Extract 'Close' and symbol (This is a 2d column. Demo below.)
+    # Calculate and return the lagged returns
     return returns
-
