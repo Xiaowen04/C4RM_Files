@@ -1,4 +1,4 @@
-import yfinance as yf
+
 import pandas as pd
 
 def YahooData2returns(YahooData=None,symbol='AAPL'):
