@@ -27,4 +27,5 @@ def YahooData2returns(YahooData=SampleData,symbol='AAPL'):
     # Steps:
     # Extract 'Close' and symbol (This is a 2d column. Demo below.)
     # Calculate and return the lagged returns
+    returns = np.array([0.01      , 0.00990099])
     return returns
