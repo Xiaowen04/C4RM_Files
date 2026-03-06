@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 
-def YahooData2returns(YahooData=SampleData,symbol='AAPL'):
+def YahooData2returns(YahooData=None,symbol='AAPL'):
     # Input:
     # YahooData = data from Yahoo Finance
     # Output:
