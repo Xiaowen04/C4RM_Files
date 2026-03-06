@@ -1,4 +1,4 @@
-
+import numpy as np
 import pandas as pd
 
 def YahooData2returns(YahooData=None,symbol='AAPL'):
